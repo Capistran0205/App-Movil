@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!-- Layout para la pantalla de acceso a la base de datos -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Etiqueta de la selección de base de datos -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="BD's"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <!-- Dropdown para la base de datos -->
+    <Spinner
+        android:id="@+id/spinnerDatabases"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:layout_marginBottom="16dp"/>
+
+    <!-- Etiqueta y campo para Usuario -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="User:"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextUser"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:padding="12dp"
+        android:hint="Ingrese usuario"
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Etiqueta y campo para Contraseña -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Password:"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:layout_marginTop="16dp" />
+
+    <EditText
+        android:id="@+id/editTextPassword"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#D3D3D3"
+        android:padding="12dp"
+        android:hint="Ingrese contraseña: "
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:inputType="textPassword"
+        android:layout_marginBottom="32dp" />
+
+
+    <!-- Container para los botones -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="24dp">
+
+        <!-- Botón para cerrar -->
+        <Button
+            android:id="@+id/btnClose"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Close"
+            android:textSize="18sp"
+            style="@style/RoundedButtonStyle"
+            app:backgroundTint="@null"
+            android:layout_marginStart="8dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnConnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Connect"
+            android:textSize="18sp"
+            style="@style/RoundedButtonStyle3"
+            app:backgroundTint="@null"
+            android:layout_marginStart="8dp"
+            android:padding="12dp"/>
+    </LinearLayout>
+    <!-- Información de estado -->
+    <TextView
+        android:id="@+id/tvStatus"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textColor="#FFFF00"
+        android:textSize="14sp"
+        android:gravity="center"
+        android:layout_marginTop="16dp"
+        android:visibility="gone" />
+</LinearLayout>

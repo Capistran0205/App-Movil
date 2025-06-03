@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout que simula una interfaz básica de SGBD -->
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/main"
+    android:layout_height="match_parent"
+    android:background="#000000"
+    android:orientation="vertical"
+    android:padding="16dp"
+    tools:context=".MainActivity2">
+
+    <!-- Encabezado de la aplicación SGBD -->
+    <TextView
+        android:id="@+id/tvSgbdTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="SGBD Básico"
+        android:textColor="#FF0000"
+        android:textSize="26sp"
+        android:textStyle="bold"
+        android:layout_marginTop="24dp" />
+
+    <!-- Información de conexión -->
+    <TextView
+        android:id="@+id/tvConnectionInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Conectado a: [Base de datos]"
+        android:textColor="#00FF00"
+        android:textSize="14sp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Bloque de selección de tablas -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Tablas:"
+            android:textColor="#FF0000"
+            android:textSize="18sp"
+            android:layout_gravity="center_vertical" />
+
+        <Spinner
+            android:id="@+id/spinnerTables"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="8dp"
+            android:background="#D3D3D3"
+            android:padding="16dp" />
+    </LinearLayout>
+
+    <!-- Área para la consulta SQL -->
+    <TextView
+        android:id="@+id/tvSqlLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Consulta SQL:"
+        android:textColor="#FF0000"
+        android:textSize="18sp" />
+
+    <EditText
+        android:id="@+id/etSqlQuery"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="#D3D3D3"
+        android:padding="8dp"
+        android:gravity="top"
+        android:inputType="textMultiLine"
+        android:textColor="#000000"
+        android:textColorHint="#666666"
+        android:hint="Escribe tu consulta SQL aquí..."
+        android:layout_marginBottom="16dp" />
+
+    <!-- Botón para ejecutar la consulta -->
+    <Button
+        android:id="@+id/btnExecute"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ejecutar Consulta"
+        android:textColor="#FFFFFF"
+        style="@style/RoundedButtonStyle2"
+        app:backgroundTint="@null"
+        android:padding="12dp"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Etiqueta para resultados -->
+    <TextView
+        android:id="@+id/tvQueryResultsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Resultados:"
+        android:textColor="#FF0000"
+        android:textSize="18sp"
+        android:layout_marginBottom="8dp" />
+
+    <!-- Área para mostrar los resultados de la consulta con RecyclerView -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewResults"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:padding="8dp"
+        android:background="#FFFFFF"
+        android:clipToPadding="false"
+        android:layout_marginBottom="16dp" />
+
+    <!-- Bloque horizontal para botones de Limpiar y Desconectar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnClear"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="LIMPIAR"
+            android:textColor="#000000"
+            style="@style/RoundedButtonStyle"
+            app:backgroundTint="@null"
+            android:layout_marginEnd="8dp"
+            android:padding="12dp" />
+
+        <Button
+            android:id="@+id/btnDisconnect"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Desconectar"
+            android:textColor="#FFFFFF"
+            style="@style/RoundedButtonStyle2"
+            app:backgroundTint="@null"
+            android:layout_marginStart="8dp"
+            android:padding="12dp" />
+    </LinearLayout>
+
+</LinearLayout>
